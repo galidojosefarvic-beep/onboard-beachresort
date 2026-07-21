@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
     <style>
-        /* ----- CSS Variables ----- */
+        /* ===== CSS Variables ===== */
         :root {
             --sand: #F5F0E8;
             --foam: #FAF8F5;
@@ -18,8 +18,6 @@
             --surf-dark: #0A3A4A;
             --sunset: #E8785A;
             --sunset-deep: #C65B3E;
-            --palm: #4A7A5A;
-            --palm-light: #6A9A7A;
             --gold: #C9A24B;
             --gold-soft: #E4CD9A;
             --ink: #1A1A1A;
@@ -32,7 +30,7 @@
             --font-sans: 'Inter', sans-serif;
         }
 
-        /* ----- Reset & Base ----- */
+        /* ===== Reset & Base ===== */
         * {
             margin: 0;
             padding: 0;
@@ -134,7 +132,7 @@
             margin-bottom: 14px;
         }
 
-        /* ----- Buttons ----- */
+        /* ===== Buttons ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -184,7 +182,7 @@
             color: var(--white);
         }
 
-        /* ----- Header ----- */
+        /* ===== Header ===== */
         header {
             position: fixed;
             top: 0;
@@ -322,7 +320,7 @@
             }
         }
 
-        /* ----- Hero ----- */
+        /* ===== Hero ===== */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -406,7 +404,7 @@
             color: var(--muted-light);
         }
 
-        /* ----- Reveal ----- */
+        /* ===== Reveal ===== */
         .reveal {
             opacity: 0;
             transform: translateY(26px);
@@ -424,7 +422,7 @@
             }
         }
 
-        /* ----- About ----- */
+        /* ===== About ===== */
         .about-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -449,7 +447,7 @@
             display: block;
         }
 
-        /* ----- Rooms ----- */
+        /* ===== Rooms ===== */
         .room-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -477,12 +475,12 @@
             border-radius: 2px;
             margin-bottom: 26px;
             overflow: hidden;
-        }
-        .room-art img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            background: var(--surf-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
         }
         .room-card h3 {
             font-size: 1.5rem;
@@ -525,7 +523,7 @@
             color: var(--muted);
         }
 
-        /* ----- Amenities ----- */
+        /* ===== Amenities ===== */
         .amenity-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -562,7 +560,7 @@
             font-size: 0.88rem;
         }
 
-        /* ----- Dining / Bar ----- */
+        /* ===== Dining / Bar ===== */
         .dine-row {
             display: flex;
             gap: 28px;
@@ -589,12 +587,12 @@
             aspect-ratio: 4/3;
             width: 100%;
             overflow: hidden;
-        }
-        .dine-art img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            background: var(--surf-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
         }
         .dine-body {
             padding: 24px;
@@ -612,7 +610,7 @@
             font-family: var(--font-serif);
         }
 
-        /* ----- Gallery ----- */
+        /* ===== Gallery ===== */
         .gal-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -629,6 +627,13 @@
             border-radius: 2px;
             overflow: hidden;
             cursor: pointer;
+            background: var(--surf-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2.5rem;
+            transition: transform 0.3s ease;
         }
         .gal-item.tall {
             grid-row: span 2;
@@ -636,36 +641,24 @@
         .gal-item.wide {
             grid-column: span 2;
         }
-        .gal-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        .gal-item:hover {
+            transform: scale(1.01);
         }
         .gal-item .cap {
             position: absolute;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
             padding: 12px 14px;
             background: linear-gradient(0deg, rgba(10, 58, 74, 0.85), transparent);
             color: var(--white);
             font-size: 0.72rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: all 0.3s ease;
-        }
-        .gal-item:hover .cap {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .gal-item:hover {
-            transform: scale(1.01);
+            text-align: center;
         }
 
-        /* ----- Reviews ----- */
+        /* ===== Reviews ===== */
         .rev-wrap {
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
@@ -721,7 +714,7 @@
             font-weight: 700;
         }
 
-        /* ----- Booking ----- */
+        /* ===== Booking ===== */
         .booking-wrap {
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
@@ -1041,7 +1034,7 @@
             color: var(--muted);
         }
 
-        /* ----- Location ----- */
+        /* ===== Location ===== */
         .loc-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1082,7 +1075,7 @@
             display: block;
         }
 
-        /* ----- Footer ----- */
+        /* ===== Footer ===== */
         footer {
             background: var(--surf-dark);
             color: var(--muted-light);
@@ -1125,7 +1118,7 @@
             gap: 12px;
         }
 
-        /* ----- Toast ----- */
+        /* ===== Toast ===== */
         .toast {
             position: fixed;
             bottom: 28px;
@@ -1513,7 +1506,7 @@
 
     <script>
         // ============================================================
-        // DATA
+        // DATA — ALL 4 ROOMS INCLUDED
         // ============================================================
         const ROOMS = [{
             id: 'dorm',
@@ -1522,7 +1515,7 @@
             guests: 8,
             desc: 'Budget-friendly dorm with bunk beds, shared bathroom, and a social atmosphere perfect for solo travelers.',
             tags: ['8-bed dorm', 'Shared bath', 'Fan', 'Social vibe'],
-            img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&h=250&fit=crop&crop=center'
+            icon: '🛏️'
         }, {
             id: 'private-double',
             name: 'Private Double Room',
@@ -1530,7 +1523,7 @@
             guests: 2,
             desc: 'Comfortable private room with a double bed, air conditioning, and shared bathroom facilities.',
             tags: ['16 sqm', 'A/C', 'Double bed', 'Shared bath'],
-            img: 'https://images.unsplash.com/photo-1584132967330-7b9e1c654bcf?w=400&h=250&fit=crop&crop=center'
+            icon: '🛌'
         }, {
             id: 'private-family',
             name: 'Family Room',
@@ -1538,7 +1531,7 @@
             guests: 4,
             desc: 'Spacious family room with two double beds, air conditioning, and private bathroom.',
             tags: ['24 sqm', 'A/C', '2 Double beds', 'Private bath'],
-            img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop&crop=center'
+            icon: '👨‍👩‍👧‍👦'
         }, {
             id: 'beachfront-cottage',
             name: 'Beachfront Cottage',
@@ -1546,7 +1539,7 @@
             guests: 3,
             desc: 'Private cottage steps from the shore with a veranda, air conditioning, and stunning ocean views.',
             tags: ['32 sqm', 'Beachfront', 'A/C', 'Private veranda'],
-            img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=250&fit=crop&crop=center'
+            icon: '🏖️'
         }];
 
         const AMENITIES = [{
@@ -1588,34 +1581,28 @@
             name: 'Beachfront Bar',
             rating: '4.0 · 8 reviews',
             desc: 'Cold beers, cocktails, and light bites served with ocean views and good company.',
-            img: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=300&h=225&fit=crop&crop=center'
+            icon: '🍺'
         }, {
             kind: 'Filipino Cuisine',
             name: 'On Board Kitchen',
             rating: '3.5 · 6 reviews',
             desc: 'Local Filipino favorites made fresh, from adobo to seafood specialties.',
-            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=225&fit=crop&crop=center'
+            icon: '🍛'
         }, {
             kind: 'All-Day Dining',
             name: 'Sunset Grill',
             rating: '4.0 · 5 reviews',
             desc: 'Grilled seafood and meats served as the sun dips below the horizon.',
-            img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=225&fit=crop&crop=center'
+            icon: '🌅'
         }];
 
         const GALLERY = [
-            { cap: 'Beachfront at Dusk', cls: 'tall',
-            img: 'https://images.unsplash.com/photo-1530023367847-a683933f4172?w=300&h=300&fit=crop&crop=center' },
-            { cap: 'Beachfront View', cls: 'wide',
-            img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop&crop=center' },
-            { cap: 'Private Double Room', cls: '',
-            img: 'https://images.unsplash.com/photo-1584132967330-7b9e1c654bcf?w=300&h=300&fit=crop&crop=center' },
-            { cap: 'Beachfront Bar', cls: '',
-            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=300&fit=crop&crop=center' },
-            { cap: 'Resort Grounds', cls: 'wide',
-            img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=300&fit=crop&crop=center' },
-            { cap: 'Beachfront Cottage', cls: '',
-            img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=300&h=300&fit=crop&crop=center' }
+            { cap: '🏖️ Beachfront', cls: 'tall' },
+            { cap: '🌅 Sunset View', cls: 'wide' },
+            { cap: '🛌 Private Room', cls: '' },
+            { cap: '🍺 Beach Bar', cls: '' },
+            { cap: '🌊 Ocean View', cls: 'wide' },
+            { cap: '🏠 Beach Cottage', cls: '' }
         ];
 
         const REVIEWS = [
@@ -1636,11 +1623,12 @@
         // ============================================================
         function renderRooms() {
             const grid = document.getElementById('roomGrid');
+            grid.innerHTML = '';
             ROOMS.forEach((r) => {
                 const el = document.createElement('div');
                 el.className = 'room-card reveal';
                 el.innerHTML = `
-                        <div class="room-art"><img src="${r.img}" alt="${r.name}"></div>
+                        <div class="room-art">${r.icon}</div>
                         <h3>${r.name}</h3>
                         <p>${r.desc}</p>
                         <div class="room-meta">
@@ -1673,7 +1661,7 @@
                 const el = document.createElement('div');
                 el.className = 'dine-card';
                 el.innerHTML = `
-                        <div class="dine-art"><img src="${d.img}" alt="${d.name}"></div>
+                        <div class="dine-art">${d.icon}</div>
                         <div class="dine-body">
                             <span class="kind">${d.kind}</span>
                             <h3>${d.name}</h3>
@@ -1690,7 +1678,7 @@
             GALLERY.forEach(g => {
                 const el = document.createElement('div');
                 el.className = `gal-item ${g.cls}`;
-                el.innerHTML = `<img src="${g.img}" alt="${g.cap}"><div class="cap">${g.cap}</div>`;
+                el.innerHTML = `<span style="font-size: 3rem; position:relative; z-index:2;">${g.cap.split(' ')[0]}</span><div class="cap">${g.cap}</div>`;
                 grid.appendChild(el);
             });
         }
