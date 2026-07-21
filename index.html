@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>On Board Panglao Beach Hostel and Resort — Panglao, Bohol</title>
-    <meta name="description" content="On Board Panglao Beach Hostel and Resort — beachfront hostel and resort on Panglao Island, Bohol. Private beach, social atmosphere, and affordable island stays.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="description" content="On Board Panglao Beach Hostel and Resort — beachfront hostel and resort on Panglao Island, Bohol. Private beach, social atmosphere, and affordable island stays." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
     <style>
+        /* ----- CSS Variables ----- */
         :root {
             --sand: #F5F0E8;
             --foam: #FAF8F5;
@@ -30,10 +31,12 @@
             --font-serif: 'DM Serif Display', serif;
             --font-sans: 'Inter', sans-serif;
         }
+
+        /* ----- Reset & Base ----- */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         html {
             scroll-behavior: smooth;
@@ -131,7 +134,7 @@
             margin-bottom: 14px;
         }
 
-        /* Buttons */
+        /* ----- Buttons ----- */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -143,7 +146,8 @@
             letter-spacing: 0.06em;
             text-transform: uppercase;
             border: 1px solid transparent;
-            transition: transform 0.4s var(--ease), background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.4s var(--ease), background 0.3s ease, color 0.3s ease,
+                border-color 0.3s ease;
         }
         .btn-primary {
             background: var(--sunset-deep);
@@ -180,7 +184,7 @@
             color: var(--white);
         }
 
-        /* Header */
+        /* ----- Header ----- */
         header {
             position: fixed;
             top: 0;
@@ -242,7 +246,7 @@
             transition: color 0.3s ease;
         }
         nav.links a::after {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             bottom: 0;
@@ -318,7 +322,7 @@
             }
         }
 
-        /* Hero */
+        /* ----- Hero ----- */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -402,7 +406,7 @@
             color: var(--muted-light);
         }
 
-        /* Reveal */
+        /* ----- Reveal ----- */
         .reveal {
             opacity: 0;
             transform: translateY(26px);
@@ -420,7 +424,7 @@
             }
         }
 
-        /* About */
+        /* ----- About ----- */
         .about-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -445,7 +449,7 @@
             display: block;
         }
 
-        /* Rooms */
+        /* ----- Rooms ----- */
         .room-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -521,7 +525,7 @@
             color: var(--muted);
         }
 
-        /* Amenities */
+        /* ----- Amenities ----- */
         .amenity-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -558,7 +562,7 @@
             font-size: 0.88rem;
         }
 
-        /* Dining */
+        /* ----- Dining / Bar ----- */
         .dine-row {
             display: flex;
             gap: 28px;
@@ -608,7 +612,7 @@
             font-family: var(--font-serif);
         }
 
-        /* Gallery */
+        /* ----- Gallery ----- */
         .gal-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -661,7 +665,7 @@
             transform: scale(1.01);
         }
 
-        /* Reviews */
+        /* ----- Reviews ----- */
         .rev-wrap {
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
@@ -717,7 +721,7 @@
             font-weight: 700;
         }
 
-        /* Booking */
+        /* ----- Booking ----- */
         .booking-wrap {
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
@@ -1037,7 +1041,7 @@
             color: var(--muted);
         }
 
-        /* Location */
+        /* ----- Location ----- */
         .loc-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1078,7 +1082,7 @@
             display: block;
         }
 
-        /* Footer */
+        /* ----- Footer ----- */
         footer {
             background: var(--surf-dark);
             color: var(--muted-light);
@@ -1121,7 +1125,7 @@
             gap: 12px;
         }
 
-        /* Toast */
+        /* ----- Toast ----- */
         .toast {
             position: fixed;
             bottom: 28px;
@@ -1143,13 +1147,13 @@
     </style>
 </head>
 <body>
-
+    <!-- ===== HEADER ===== -->
     <header id="siteHeader">
         <div class="container">
             <a href="#top" class="brand">
                 <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
-                    <circle cx="20" cy="20" r="19" stroke="#C9A24B" stroke-width="1"/>
-                    <path d="M20 30C20 30 11 24.5 11 17.5C11 13.9 13.9 11 17.4 11C18.9 11 20 12 20 12C20 12 21.1 11 22.6 11C26.1 11 29 13.9 29 17.5C29 24.5 20 30 20 30Z" fill="#C9A24B" opacity=".85"/>
+                    <circle cx="20" cy="20" r="19" stroke="#C9A24B" stroke-width="1" />
+                    <path d="M20 30C20 30 11 24.5 11 17.5C11 13.9 13.9 11 17.4 11C18.9 11 20 12 20 12C20 12 21.1 11 22.6 11C26.1 11 29 13.9 29 17.5C29 24.5 20 30 20 30Z" fill="#C9A24B" opacity=".85" />
                 </svg>
                 <span class="brand-name">On Board Panglao<span>Beach Hostel & Resort</span></span>
             </a>
@@ -1157,7 +1161,7 @@
                 <a href="#about">About</a>
                 <a href="#rooms">Rooms</a>
                 <a href="#amenities">Amenities</a>
-                <a href="#dining">Dining</a>
+                <a href="#dining">Bar & Dining</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#location">Location</a>
@@ -1169,18 +1173,20 @@
         </div>
     </header>
 
+    <!-- ===== MOBILE MENU ===== -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
         <a href="#about">About</a>
         <a href="#rooms">Rooms</a>
         <a href="#amenities">Amenities</a>
-        <a href="#dining">Dining</a>
+        <a href="#dining">Bar & Dining</a>
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
         <a href="#location">Location</a>
         <a href="#booking" class="btn btn-gold">Book Now</a>
     </div>
 
+    <!-- ===== HERO ===== -->
     <section class="hero" id="top">
         <div class="hero-bg">
             <img src="https://images.unsplash.com/photo-1571896349842-33c89424ffe2?w=1440&q=80" alt="On Board Panglao Beach Hostel and Resort">
@@ -1204,7 +1210,7 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ===== ABOUT ===== -->
     <section class="section" id="about">
         <div class="container about-grid">
             <div class="reveal">
@@ -1226,7 +1232,7 @@
         </div>
     </section>
 
-    <!-- ROOMS -->
+    <!-- ===== ROOMS ===== -->
     <section class="section" id="rooms" style="padding-top: 0;">
         <div class="container">
             <div class="section-head reveal">
@@ -1237,7 +1243,7 @@
         <div class="room-grid" id="roomGrid"></div>
     </section>
 
-    <!-- AMENITIES -->
+    <!-- ===== AMENITIES ===== -->
     <section class="section dark-bg" id="amenities" style="padding-top: 64px;">
         <div class="container">
             <div class="section-head reveal on-dark">
@@ -1248,18 +1254,18 @@
         <div class="amenity-grid" id="amenityGrid"></div>
     </section>
 
-    <!-- DINING -->
+    <!-- ===== BAR & DINING ===== -->
     <section class="section" id="dining">
         <div class="container">
             <div class="section-head reveal">
-                <span class="eyebrow">Dining &amp; Bar</span>
+                <span class="eyebrow">Bar &amp; Dining</span>
                 <h2 style="margin-top: 14px;">Flavors of <em>the island</em></h2>
             </div>
             <div class="dine-row reveal" id="dineRow"></div>
         </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- ===== GALLERY ===== -->
     <section class="section" style="padding-top: 0;" id="gallery">
         <div class="container">
             <div class="section-head reveal">
@@ -1270,7 +1276,7 @@
         </div>
     </section>
 
-    <!-- REVIEWS -->
+    <!-- ===== REVIEWS ===== -->
     <section class="section" id="reviews" style="background: var(--sand);">
         <div class="container">
             <div class="section-head reveal">
@@ -1297,7 +1303,7 @@
         </div>
     </section>
 
-    <!-- BOOKING -->
+    <!-- ===== BOOKING ===== -->
     <section class="section" id="booking" style="background: var(--foam);">
         <div class="container">
             <div class="section-head center reveal">
@@ -1333,12 +1339,12 @@
                         <div class="field-row">
                             <div class="field" id="fCheckin">
                                 <label for="checkin">Check-in</label>
-                                <input type="date" id="checkin">
+                                <input type="date" id="checkin" />
                                 <div class="field-error">Please choose a check-in date.</div>
                             </div>
                             <div class="field" id="fCheckout">
                                 <label for="checkout">Check-out</label>
-                                <input type="date" id="checkout">
+                                <input type="date" id="checkout" />
                                 <div class="field-error">Check-out must be after check-in.</div>
                             </div>
                         </div>
@@ -1375,24 +1381,24 @@
                         <div class="field-row">
                             <div class="field" id="fName">
                                 <label for="gname">Full name</label>
-                                <input type="text" id="gname" placeholder="Juan Dela Cruz">
+                                <input type="text" id="gname" placeholder="Juan Dela Cruz" />
                                 <div class="field-error">Please enter your full name.</div>
                             </div>
                             <div class="field" id="fEmail">
                                 <label for="gemail">Email</label>
-                                <input type="email" id="gemail" placeholder="you@email.com">
+                                <input type="email" id="gemail" placeholder="you@email.com" />
                                 <div class="field-error">Please enter a valid email.</div>
                             </div>
                         </div>
                         <div class="field-row">
                             <div class="field" id="fPhone">
                                 <label for="gphone">Phone number</label>
-                                <input type="tel" id="gphone" placeholder="+63 900 000 0000">
+                                <input type="tel" id="gphone" placeholder="+63 900 000 0000" />
                                 <div class="field-error">Please enter a contact number.</div>
                             </div>
                             <div class="field">
                                 <label for="grequest">Special requests (optional)</label>
-                                <input type="text" id="grequest" placeholder="High floor, honeymoon, etc.">
+                                <input type="text" id="grequest" placeholder="High floor, honeymoon, etc." />
                             </div>
                         </div>
 
@@ -1419,7 +1425,7 @@
         </div>
     </section>
 
-    <!-- LOCATION -->
+    <!-- ===== LOCATION ===== -->
     <section class="section dark-bg" id="location">
         <div class="container loc-grid">
             <div class="reveal">
@@ -1455,12 +1461,13 @@
             </div>
             <div class="reveal">
                 <div class="loc-map">
-                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&h=500&fit=crop&crop=center" alt="Map location of On Board Panglao Beach Hostel and Resort">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&h=500&fit=crop&crop=center" alt="Map location of On Board Panglao Beach Hostel and Resort" />
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="foot-grid">
@@ -1473,7 +1480,7 @@
                     <ul>
                         <li><a href="#rooms">Rooms &amp; Dorms</a></li>
                         <li><a href="#amenities">Amenities</a></li>
-                        <li><a href="#dining">Dining &amp; Bar</a></li>
+                        <li><a href="#dining">Bar &amp; Dining</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                     </ul>
                 </div>
@@ -1489,7 +1496,7 @@
                     <h4>Stay in Touch</h4>
                     <p style="font-size: 0.85rem; margin-bottom: 14px;">Receive exclusive offers and updates.</p>
                     <div style="display: flex; gap: 0;">
-                        <input type="email" placeholder="Email address" style="flex: 1; padding: 11px 14px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: var(--white); font-size: 0.85rem;">
+                        <input type="email" placeholder="Email address" style="flex: 1; padding: 11px 14px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: var(--white); font-size: 0.85rem;" />
                         <button class="btn btn-gold" style="padding: 11px 18px;" onclick="showToast('Thanks — we\'ll be in touch.')">Join</button>
                     </div>
                 </div>
@@ -1501,10 +1508,13 @@
         </div>
     </footer>
 
+    <!-- ===== TOAST ===== -->
     <div class="toast" id="toast"></div>
 
     <script>
-        /* ================= DATA ================= */
+        // ============================================================
+        // DATA
+        // ============================================================
         const ROOMS = [{
             id: 'dorm',
             name: 'Shared Dormitory',
@@ -1621,22 +1631,24 @@
 
         const peso = n => '₱' + Math.round(n).toLocaleString('en-PH');
 
-        /* ================= RENDER FUNCTIONS ================= */
+        // ============================================================
+        // RENDER FUNCTIONS
+        // ============================================================
         function renderRooms() {
             const grid = document.getElementById('roomGrid');
-            ROOMS.forEach((r, i) => {
+            ROOMS.forEach((r) => {
                 const el = document.createElement('div');
                 el.className = 'room-card reveal';
                 el.innerHTML = `
-                            <div class="room-art"><img src="${r.img}" alt="${r.name}"></div>
-                            <h3>${r.name}</h3>
-                            <p>${r.desc}</p>
-                            <div class="room-meta">
-                                <div class="room-price">${peso(r.price)}<span>per night</span></div>
-                                <span style="font-size: 0.78rem; color: var(--muted);">Sleeps ${r.guests}</span>
-                            </div>
-                            <div class="room-tags">${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-                        `;
+                        <div class="room-art"><img src="${r.img}" alt="${r.name}"></div>
+                        <h3>${r.name}</h3>
+                        <p>${r.desc}</p>
+                        <div class="room-meta">
+                            <div class="room-price">${peso(r.price)}<span>per night</span></div>
+                            <span style="font-size: 0.78rem; color: var(--muted);">Sleeps ${r.guests}</span>
+                        </div>
+                        <div class="room-tags">${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                    `;
                 grid.appendChild(el);
             });
         }
@@ -1647,10 +1659,10 @@
                 const el = document.createElement('div');
                 el.className = 'amenity reveal';
                 el.innerHTML = `
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="${a.icon}"/></svg>
-                            <h4>${a.name}</h4>
-                            <p>${a.desc}</p>
-                        `;
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="${a.icon}"/></svg>
+                        <h4>${a.name}</h4>
+                        <p>${a.desc}</p>
+                    `;
                 grid.appendChild(el);
             });
         }
@@ -1661,14 +1673,14 @@
                 const el = document.createElement('div');
                 el.className = 'dine-card';
                 el.innerHTML = `
-                            <div class="dine-art"><img src="${d.img}" alt="${d.name}"></div>
-                            <div class="dine-body">
-                                <span class="kind">${d.kind}</span>
-                                <h3>${d.name}</h3>
-                                <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 8px;">★ ${d.rating}</p>
-                                <p>${d.desc}</p>
-                            </div>
-                        `;
+                        <div class="dine-art"><img src="${d.img}" alt="${d.name}"></div>
+                        <div class="dine-body">
+                            <span class="kind">${d.kind}</span>
+                            <h3>${d.name}</h3>
+                            <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 8px;">★ ${d.rating}</p>
+                            <p>${d.desc}</p>
+                        </div>
+                    `;
                 row.appendChild(el);
             });
         }
@@ -1689,15 +1701,17 @@
                 const el = document.createElement('div');
                 el.className = 'rev-card';
                 el.innerHTML = `
-                            <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
-                            <p>${r.text}</p>
-                            <div class="who">${r.who}</div>
-                        `;
+                        <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+                        <p>${r.text}</p>
+                        <div class="who">${r.who}</div>
+                    `;
                 grid.appendChild(el);
             });
         }
 
-        /* ================= NAV ================= */
+        // ============================================================
+        // NAV
+        // ============================================================
         const header = document.getElementById('siteHeader');
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.scrollY > 40);
@@ -1708,16 +1722,21 @@
         const mobileClose = document.getElementById('mobileClose');
         burgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
         mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove(
+        'open')));
 
-        /* ================= REVEAL ================= */
+        // ============================================================
+        // REVEAL
+        // ============================================================
         const io = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in');
                     io.unobserve(e.target); } });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        /* ================= TOAST ================= */
+        // ============================================================
+        // TOAST
+        // ============================================================
         const toastEl = document.getElementById('toast');
         let toastTimer;
 
@@ -1728,7 +1747,9 @@
             toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3200);
         }
 
-        /* ================= BOOKING LOGIC ================= */
+        // ============================================================
+        // BOOKING LOGIC
+        // ============================================================
         const state = { checkin: null, checkout: null, adults: 2, children: 0, roomId: null };
 
         const checkinInput = document.getElementById('checkin');
@@ -1795,12 +1816,12 @@
                 const el = document.createElement('div');
                 el.className = 'room-option' + (state.roomId === r.id ? ' selected' : '');
                 el.innerHTML = `
-                                <div>
-                                    <div class="ro-name">${r.name}</div>
-                                    <div class="ro-meta">Sleeps ${r.guests} · ${n} night${n > 1 ? 's' : ''}</div>
-                                </div>
-                                <div class="ro-price">${peso(r.price)}<div style="font-size: 0.68rem; color: var(--muted); text-align: right;">/ night</div></div>
-                            `;
+                            <div>
+                                <div class="ro-name">${r.name}</div>
+                                <div class="ro-meta">Sleeps ${r.guests} · ${n} night${n > 1 ? 's' : ''}</div>
+                            </div>
+                            <div class="ro-price">${peso(r.price)}<div style="font-size: 0.68rem; color: var(--muted); text-align: right;">/ night</div></div>
+                        `;
                 el.addEventListener('click', () => {
                     state.roomId = r.id;
                     renderRoomPick();
@@ -1815,34 +1836,36 @@
             const { subtotal, service, vat, total } = computeTotals(n, state.roomId);
             const room = ROOMS.find(r => r.id === state.roomId);
             document.getElementById('summaryBox').innerHTML = `
-                            <div class="summary-row"><span>${room.name} × ${n} night${n > 1 ? 's' : ''}</span><span>${peso(subtotal)}</span></div>
-                            <div class="summary-row"><span>Service charge (10%)</span><span>${peso(service)}</span></div>
-                            <div class="summary-row"><span>VAT (12%)</span><span>${peso(vat)}</span></div>
-                            <div class="summary-row total"><span>Total due at property</span><span>${peso(total)}</span></div>
-                        `;
+                        <div class="summary-row"><span>${room.name} × ${n} night${n > 1 ? 's' : ''}</span><span>${peso(subtotal)}</span></div>
+                        <div class="summary-row"><span>Service charge (10%)</span><span>${peso(service)}</span></div>
+                        <div class="summary-row"><span>VAT (12%)</span><span>${peso(vat)}</span></div>
+                        <div class="summary-row total"><span>Total due at property</span><span>${peso(total)}</span></div>
+                    `;
         }
 
         function renderPostcard(guest) {
             const n = nightsBetween(state.checkin, state.checkout);
             const room = ROOMS.find(r => r.id === state.roomId);
             const { total } = computeTotals(n, state.roomId);
-            const inD = new Date(state.checkin).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-            const outD = new Date(state.checkout).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const inD = new Date(state.checkin).toLocaleDateString('en-US', { month: 'short', day: 'numeric',
+                year: 'numeric' });
+            const outD = new Date(state.checkout).toLocaleDateString('en-US', { month: 'short', day: 'numeric',
+                year: 'numeric' });
 
             document.getElementById('postcard').innerHTML = `
-                            <div class="stamp">On Board<br>Panglao</div>
-                            <span class="eyebrow">Booking Reference</span>
-                            <div class="ref">${refCode()}</div>
-                            <div class="ref-label">Present at check-in with a valid ID</div>
-                            <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px;">
-                                <div><b style="font-family: var(--font-serif);">${room.name}</b><div style="font-size: 0.8rem; color: var(--muted);">${state.adults} adult${state.adults > 1 ? 's' : ''}${state.children ? ', ' + state.children + ' child' + (state.children > 1 ? 'ren' : '') : ''}</div></div>
-                                <div><b style="font-family: var(--font-serif);">${peso(total)}</b><div style="font-size: 0.8rem; color: var(--muted);">Total, taxes included</div></div>
-                                <div><b style="font-family: var(--font-serif);">${inD}</b><div style="font-size: 0.8rem; color: var(--muted);">Check-in from 2:00 PM</div></div>
-                                <div><b style="font-family: var(--font-serif);">${outD}</b><div style="font-size: 0.8rem; color: var(--muted);">Check-out by 11:00 AM</div></div>
-                                <div style="grid-column: 1/-1;"><b style="font-family: var(--font-serif);">${guest.name}</b><div style="font-size: 0.8rem; color: var(--muted);">${guest.email} · ${guest.phone}</div></div>
-                                ${guest.request ? `<div style="grid-column: 1/-1;"><b style="font-family: var(--font-serif); font-size: 0.95rem;">Special request</b><div style="font-size: 0.8rem; color: var(--muted);">${guest.request}</div></div>` : ''}
-                            </div>
-                        `;
+                        <div class="stamp">On Board<br>Panglao</div>
+                        <span class="eyebrow">Booking Reference</span>
+                        <div class="ref">${refCode()}</div>
+                        <div class="ref-label">Present at check-in with a valid ID</div>
+                        <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px;">
+                            <div><b style="font-family: var(--font-serif);">${room.name}</b><div style="font-size: 0.8rem; color: var(--muted);">${state.adults} adult${state.adults > 1 ? 's' : ''}${state.children ? ', ' + state.children + ' child' + (state.children > 1 ? 'ren' : '') : ''}</div></div>
+                            <div><b style="font-family: var(--font-serif);">${peso(total)}</b><div style="font-size: 0.8rem; color: var(--muted);">Total, taxes included</div></div>
+                            <div><b style="font-family: var(--font-serif);">${inD}</b><div style="font-size: 0.8rem; color: var(--muted);">Check-in from 2:00 PM</div></div>
+                            <div><b style="font-family: var(--font-serif);">${outD}</b><div style="font-size: 0.8rem; color: var(--muted);">Check-out by 11:00 AM</div></div>
+                            <div style="grid-column: 1/-1;"><b style="font-family: var(--font-serif);">${guest.name}</b><div style="font-size: 0.8rem; color: var(--muted);">${guest.email} · ${guest.phone}</div></div>
+                            ${guest.request ? `<div style="grid-column: 1/-1;"><b style="font-family: var(--font-serif); font-size: 0.95rem;">Special request</b><div style="font-size: 0.8rem; color: var(--muted);">${guest.request}</div></div>` : ''}
+                        </div>
+                    `;
         }
 
         function refCode() {
@@ -1862,7 +1885,8 @@
 
             if (!checkinInput.value) { fCheckin.classList.add('invalid');
                 valid = false; }
-            if (!checkoutInput.value || nightsBetween(checkinInput.value, checkoutInput.value) <= 0) { fCheckout.classList.add('invalid');
+            if (!checkoutInput.value || nightsBetween(checkinInput.value, checkoutInput.value) <= 0) { fCheckout
+                    .classList.add('invalid');
                 valid = false; }
 
             if (!valid) return;
