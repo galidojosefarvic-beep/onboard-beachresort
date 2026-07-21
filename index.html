@@ -3,78 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On Board Panglao — Beach Hostel & Resort</title>
+    <title>On Board Panglao Beach Hostel and Resort — Panglao, Bohol</title>
+    <meta name="description" content="On Board Panglao Beach Hostel and Resort — beachfront hostel and resort on Panglao Island, Bohol. Private beach, social atmosphere, and affordable island stays.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --sand: #F5F0E8;
+            --foam: #FAF8F5;
+            --surf: #1A5A6A;
+            --surf-light: #2A7A8A;
+            --surf-dark: #0A3A4A;
+            --sunset: #E8785A;
+            --sunset-deep: #C65B3E;
+            --palm: #4A7A5A;
+            --palm-light: #6A9A7A;
+            --gold: #C9A24B;
+            --gold-soft: #E4CD9A;
+            --ink: #1A1A1A;
+            --muted: #6B7A78;
+            --muted-light: #9FBDB6;
+            --white: #FFFFFF;
+            --shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.4);
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --font-serif: 'DM Serif Display', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
         html {
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background: #FAF8F5;
-            color: #1A1A1A;
+            font-family: var(--font-sans);
+            background: var(--foam);
+            color: var(--ink);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
             line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
         }
         img {
             display: block;
             max-width: 100%;
-            height: auto;
         }
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
         }
         ul {
             list-style: none;
         }
-        .btn {
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .eyebrow {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            color: var(--sunset-deep);
+            margin-bottom: 12px;
             display: inline-block;
-            padding: 14px 32px;
+        }
+        .eyebrow.light {
+            color: var(--gold-soft);
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+        h2 {
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+        }
+        h2 em,
+        h1 em {
+            font-style: italic;
+            color: var(--sunset-deep);
+        }
+        .dark-bg h2 em {
+            color: var(--gold);
+        }
+        p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .dark-bg p {
+            color: var(--muted-light);
+        }
+        .section {
+            padding: 100px 0;
+        }
+        @media (max-width: 720px) {
+            .section {
+                padding: 70px 0;
+            }
+        }
+        .dark-bg {
+            background: var(--surf-dark);
+            color: var(--white);
+        }
+        .section-head {
+            max-width: 640px;
+            margin-bottom: 56px;
+        }
+        .section-head.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .section-head .eyebrow {
+            margin-bottom: 14px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 34px;
+            border-radius: 2px;
             font-weight: 600;
             font-size: 0.8rem;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            transition: transform 0.4s var(--ease), background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         .btn-primary {
-            background: #C65B3E;
-            color: #fff;
+            background: var(--sunset-deep);
+            color: var(--white);
         }
         .btn-primary:hover {
-            background: #E8785A;
+            background: var(--sunset);
             transform: translateY(-2px);
         }
         .btn-gold {
-            background: #C9A24B;
-            color: #0A3A4A;
+            background: var(--gold);
+            color: var(--surf-dark);
         }
         .btn-gold:hover {
-            background: #E4CD9A;
+            background: var(--gold-soft);
             transform: translateY(-2px);
         }
         .btn-outline {
+            border-color: var(--white);
+            color: var(--white);
             background: transparent;
-            border: 1px solid #fff;
-            color: #fff;
         }
         .btn-outline:hover {
-            background: #fff;
-            color: #0A3A4A;
+            background: var(--white);
+            color: var(--surf-dark);
+        }
+        .btn-outline-dark {
+            border-color: var(--ink);
+            color: var(--ink);
+            background: transparent;
+        }
+        .btn-outline-dark:hover {
+            background: var(--ink);
+            color: var(--white);
         }
 
         /* Header */
@@ -84,80 +187,144 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 18px 0;
-            transition: all 0.3s ease;
-        }
-        header.scrolled {
-            background: rgba(10, 58, 74, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 12px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            padding: 22px 0;
+            transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
         }
         header .container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
-        .logo {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.2rem;
-            color: #fff;
+        header.scrolled {
+            background: rgba(10, 58, 74, 0.92);
+            backdrop-filter: blur(10px);
+            padding: 14px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
-        .logo span {
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+        }
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            flex-shrink: 0;
+        }
+        .brand-name {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+        .brand-name span {
             display: block;
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.55rem;
             letter-spacing: 0.2em;
+            color: var(--gold-soft);
             text-transform: uppercase;
-            color: #E4CD9A;
             margin-top: 2px;
         }
-        nav a {
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-left: 28px;
-            position: relative;
+        nav.links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
         }
-        nav a::after {
-            content: '';
+        nav.links a {
+            color: var(--white);
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+        nav.links a::after {
+            content: "";
             position: absolute;
             left: 0;
-            bottom: -4px;
-            width: 0;
+            bottom: 0;
             height: 1px;
-            background: #C9A24B;
-            transition: width 0.3s ease;
+            width: 0;
+            background: var(--gold);
+            transition: width 0.35s var(--ease);
         }
-        nav a:hover::after {
+        nav.links a:hover::after {
             width: 100%;
+        }
+        nav.links a:hover {
+            color: var(--gold-soft);
+        }
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
         .burger {
             display: none;
+            flex-direction: column;
+            gap: 5px;
             background: none;
             border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
+            padding: 8px;
+        }
+        .burger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+        }
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--surf-dark);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            transform: translateY(-100%);
+            transition: transform 0.5s var(--ease);
+        }
+        .mobile-menu.open {
+            transform: translateY(0);
+        }
+        .mobile-menu a {
+            color: var(--white);
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+        }
+        .mobile-close {
+            position: absolute;
+            top: 26px;
+            right: 28px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
         }
         @media (max-width: 900px) {
-            nav {
+            nav.links {
                 display: none;
             }
             .burger {
-                display: block;
+                display: flex;
+            }
+            .nav-cta .btn {
+                padding: 10px 18px;
+                font-size: 0.7rem;
             }
         }
 
         /* Hero */
         .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
             align-items: flex-end;
-            background: #0A3A4A;
-            position: relative;
+            background: var(--surf-dark);
             overflow: hidden;
         }
         .hero-bg {
@@ -165,812 +332,81 @@
             inset: 0;
             width: 100%;
             height: 100%;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            opacity: 0.65;
+            opacity: 0.7;
         }
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             width: 100%;
-            padding: 160px 0 80px;
-            color: #fff;
+            padding: 180px 0 90px;
         }
         .hero-content .container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
+        }
+        .hero-kicker {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--gold-soft);
+        }
+        .hero-kicker .rule {
+            width: 44px;
+            height: 1px;
+            background: var(--gold-soft);
         }
         .hero h1 {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            color: var(--white);
+            font-size: clamp(2.8rem, 7vw, 5.8rem);
             max-width: 14ch;
-            line-height: 1.05;
         }
         .hero h1 em {
-            color: #C9A24B;
-            font-style: italic;
+            color: var(--gold);
         }
-        .hero p {
+        .hero-sub {
             max-width: 44ch;
-            color: #9FBDB6;
+            color: var(--muted-light);
             font-size: 1.05rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 18px;
+            margin-top: 12px;
+            flex-wrap: wrap;
         }
         .hero-stats {
             display: flex;
             gap: 48px;
-            margin-top: 40px;
+            margin-top: 56px;
             padding-top: 32px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
         }
-        .hero-stats b {
+        .hero-stat b {
             display: block;
-            font-family: 'DM Serif Display', serif;
+            font-family: var(--font-serif);
             font-size: 1.8rem;
-            color: #E4CD9A;
+            color: var(--gold-soft);
             font-weight: 400;
         }
-        .hero-stats span {
+        .hero-stat span {
             font-size: 0.7rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #9FBDB6;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
-
-        /* Section */
-        .section {
-            padding: 80px 0;
-        }
-        .section-head {
-            max-width: 560px;
-            margin-bottom: 48px;
-        }
-        .section-head .eyebrow {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: #C65B3E;
-            display: block;
-            margin-bottom: 8px;
-        }
-        .section-head h2 {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.1;
-        }
-        .section-head h2 em {
-            color: #C65B3E;
-            font-style: italic;
-        }
-        .section-head p {
-            color: #6B7A78;
-            margin-top: 12px;
-        }
-        .dark-bg {
-            background: #0A3A4A;
-            color: #fff;
-        }
-        .dark-bg .section-head p {
-            color: #9FBDB6;
-        }
-        .dark-bg .section-head .eyebrow {
-            color: #E4CD9A;
-        }
-
-        /* About */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-        .about-image {
-            border-radius: 4px;
-            overflow: hidden;
-            aspect-ratio: 4/5;
-        }
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .about-text p {
-            color: #6B7A78;
-            margin-bottom: 16px;
-        }
-        .about-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 32px;
-        }
-        .about-stats div {
-            border-left: 1px solid rgba(0, 0, 0, 0.08);
-            padding-left: 16px;
-        }
-        .about-stats strong {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.6rem;
-            color: #C65B3E;
-            display: block;
-        }
-        .about-stats span {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #6B7A78;
-        }
-        @media (max-width: 800px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Rooms */
-        .room-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px;
-            background: rgba(0, 0, 0, 0.05);
-        }
-        .room-card {
-            background: #fff;
-            padding: 40px 36px;
-        }
-        .room-card:hover {
-            background: #F5F0E8;
-        }
-        .room-art {
-            aspect-ratio: 16/10;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .room-art img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .room-card h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.4rem;
-            margin-bottom: 6px;
-        }
-        .room-card p {
-            color: #6B7A78;
-            font-size: 0.92rem;
-        }
-        .room-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin: 16px 0 10px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .room-price {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.4rem;
-            color: #C65B3E;
-        }
-        .room-price span {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.65rem;
-            color: #6B7A78;
-            text-transform: uppercase;
-            display: block;
-        }
-        .room-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 12px;
-        }
-        .tag {
-            font-size: 0.6rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            color: #6B7A78;
-        }
-        @media (max-width: 800px) {
-            .room-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Amenities */
-        .amenity-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1px;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .amenity {
-            background: #0A3A4A;
-            padding: 36px 28px;
-            transition: background 0.3s ease;
-        }
-        .amenity:hover {
-            background: #1A5A6A;
-        }
-        .amenity svg {
-            width: 30px;
-            height: 30px;
-            stroke: #C9A24B;
-            margin-bottom: 16px;
-        }
-        .amenity h4 {
-            font-size: 1rem;
-            color: #fff;
-            margin-bottom: 6px;
-        }
-        .amenity p {
-            font-size: 0.85rem;
-            color: #9FBDB6;
-        }
-        @media (max-width: 900px) {
-            .amenity-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* Dining */
-        .dine-row {
-            display: flex;
-            gap: 28px;
-            overflow-x: auto;
-            padding-bottom: 12px;
-            scroll-snap-type: x mandatory;
-        }
-        .dine-card {
-            flex: 0 0 300px;
-            scroll-snap-align: start;
-            background: #fff;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-        }
-        .dine-art {
-            aspect-ratio: 4/3;
-            overflow: hidden;
-        }
-        .dine-art img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .dine-body {
-            padding: 24px;
-        }
-        .dine-body .kind {
-            font-size: 0.65rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #C65B3E;
-            font-weight: 700;
-        }
-        .dine-body h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.2rem;
-            margin: 6px 0 8px;
-        }
-        .dine-body p {
-            color: #6B7A78;
-            font-size: 0.88rem;
-        }
-
-        /* Gallery */
-        .gal-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 140px;
-            gap: 10px;
-        }
-        .gal-item {
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-        }
-        .gal-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .gal-item.tall {
-            grid-row: span 2;
-        }
-        .gal-item.wide {
-            grid-column: span 2;
-        }
-        .gal-item .cap {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 12px;
-            background: linear-gradient(to top, rgba(10, 58, 74, 0.85), transparent);
-            color: #fff;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-        @media (max-width: 800px) {
-            .gal-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* Reviews */
-        .rev-wrap {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 64px;
-        }
-        .rating-big {
-            font-family: 'DM Serif Display', serif;
-            font-size: 5rem;
-            color: #0A3A4A;
-            line-height: 1;
-        }
-        .stars {
-            color: #C9A24B;
-            letter-spacing: 3px;
-            margin: 10px 0;
-        }
-        .rev-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .rev-card {
-            background: #fff;
-            padding: 24px;
-            border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        }
-        .rev-card .stars {
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-        }
-        .rev-card p {
-            color: #6B7A78;
-            font-size: 0.92rem;
-        }
-        .rev-card .who {
-            margin-top: 14px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #6B7A78;
-            font-weight: 700;
-        }
-        @media (max-width: 900px) {
-            .rev-wrap {
-                grid-template-columns: 1fr;
-            }
-            .rev-cards {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Booking */
-        .booking-wrap {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            background: #fff;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-        }
-        .booking-side {
-            background: #1A5A6A;
-            color: #fff;
-            padding: 48px 40px;
-        }
-        .booking-side .rate {
-            margin-top: 40px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .booking-side .rate b {
-            font-family: 'DM Serif Display', serif;
-            font-size: 2.2rem;
-            color: #E4CD9A;
-        }
-        .booking-steps {
-            margin-top: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-        .booking-steps li {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 0.85rem;
-            color: #9FBDB6;
-        }
-        .booking-steps li .num {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            border: 1px solid #9FBDB6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-family: 'DM Serif Display', serif;
-        }
-        .booking-steps li.active {
-            color: #fff;
-        }
-        .booking-steps li.active .num {
-            background: #C9A24B;
-            border-color: #C9A24B;
-            color: #0A3A4A;
-        }
-        .booking-steps li.done .num {
-            border-color: #E4CD9A;
-            color: #E4CD9A;
-        }
-        .booking-main {
-            padding: 48px 44px;
-        }
-        .b-step {
-            display: none;
-        }
-        .b-step.active {
-            display: block;
-            animation: fadeUp 0.4s ease;
-        }
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .b-step h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.4rem;
-            margin-bottom: 4px;
-        }
-        .b-step .hint {
-            color: #6B7A78;
-            font-size: 0.88rem;
-            margin-bottom: 24px;
-        }
-        .field-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .field {
-            margin-bottom: 16px;
-        }
-        .field label {
-            display: block;
-            font-size: 0.7rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #6B7A78;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .field input,
-        .field select {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            background: #FAF8F5;
-            border-radius: 2px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.92rem;
-        }
-        .field input:focus,
-        .field select:focus {
-            outline: none;
-            border-color: #C65B3E;
-        }
-        .field-error {
-            color: #C65B3E;
-            font-size: 0.76rem;
-            margin-top: 6px;
-            display: none;
-        }
-        .field.invalid input {
-            border-color: #C65B3E;
-        }
-        .field.invalid .field-error {
-            display: block;
-        }
-        .stepper {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .stepper button {
-            width: 34px;
-            height: 34px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            background: #fff;
-            border-radius: 50%;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        .stepper button:hover {
-            border-color: #C65B3E;
-            color: #C65B3E;
-        }
-        .stepper span {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.1rem;
-            min-width: 24px;
-            text-align: center;
-        }
-        .chip-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .chip {
-            padding: 8px 14px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            background: transparent;
-            border-radius: 2px;
-            font-size: 0.8rem;
-            font-family: 'Inter', sans-serif;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .chip[aria-pressed="true"] {
-            background: #C65B3E;
-            border-color: #C65B3E;
-            color: #fff;
-        }
-        .chip:hover {
-            background: rgba(198, 91, 62, 0.06);
-        }
-        .b-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 28px;
-            gap: 16px;
-        }
-        .b-back {
-            background: none;
-            border: none;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #6B7A78;
-            cursor: pointer;
-        }
-        .b-back:hover {
-            color: #C65B3E;
-        }
-        .summary-box {
-            background: #F5F0E8;
-            padding: 20px 24px;
-            border-radius: 4px;
-            margin-top: 8px;
-        }
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.88rem;
-            padding: 6px 0;
-            color: #6B7A78;
-        }
-        .summary-row.total {
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            margin-top: 6px;
-            padding-top: 12px;
-            font-weight: 700;
-            color: #1A1A1A;
-            font-size: 1rem;
-        }
-        .postcard {
-            border: 1px dashed #C9A24B;
-            border-radius: 4px;
-            padding: 32px 28px;
-            background: #FAF8F5;
-            position: relative;
-        }
-        .postcard .stamp {
-            position: absolute;
-            top: 20px;
-            right: 24px;
-            width: 60px;
-            height: 72px;
-            border: 2px solid #C9A24B;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(6deg);
-            font-family: 'DM Serif Display', serif;
-            font-style: italic;
-            color: #C9A24B;
-            font-size: 0.65rem;
-            text-align: center;
-            padding: 4px;
-        }
-        .postcard .ref {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.8rem;
-            margin: 10px 0 2px;
-        }
-        .postcard .ref-label {
-            font-size: 0.65rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #6B7A78;
-        }
-        .room-pick {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .room-option {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 18px;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 3px;
-            cursor: pointer;
-            background: #FAF8F5;
-            transition: all 0.2s ease;
-        }
-        .room-option:hover {
-            border-color: #C65B3E;
-        }
-        .room-option.selected {
-            border-color: #C65B3E;
-            background: rgba(198, 91, 62, 0.04);
-        }
-        .room-option .ro-name {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1rem;
-        }
-        .room-option .ro-meta {
-            font-size: 0.76rem;
-            color: #6B7A78;
-        }
-        .room-option .ro-price {
-            font-family: 'DM Serif Display', serif;
-            color: #C65B3E;
-            font-size: 1.1rem;
-        }
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(120%);
-            background: #0A3A4A;
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 4px;
-            z-index: 300;
-            font-size: 0.85rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease;
-            border-left: 3px solid #C9A24B;
-        }
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* Location */
-        .loc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .loc-list li {
-            display: flex;
-            gap: 16px;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .loc-list b {
-            display: block;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1rem;
-            font-weight: 400;
-            color: #fff;
-        }
-        .loc-list span {
-            font-size: 0.85rem;
-            color: #9FBDB6;
-        }
-        .loc-map {
-            border-radius: 4px;
-            overflow: hidden;
-            aspect-ratio: 1/1;
-        }
-        .loc-map img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        @media (max-width: 900px) {
-            .loc-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Footer */
-        footer {
-            background: #0A3A4A;
-            color: #9FBDB6;
-            padding: 60px 0 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .foot-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-            gap: 48px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .foot-grid h4 {
-            color: #E4CD9A;
-            font-size: 0.7rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-        .foot-grid li {
-            padding: 4px 0;
-            font-size: 0.85rem;
-        }
-        .foot-grid a:hover {
-            color: #fff;
-        }
-        .foot-bottom {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 24px;
-            font-size: 0.75rem;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        @media (max-width: 800px) {
-            .foot-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .booking-wrap {
-                grid-template-columns: 1fr;
-            }
-            .booking-side {
-                padding: 32px 24px;
-            }
-            .booking-main {
-                padding: 32px 24px;
-            }
+            color: var(--muted-light);
         }
 
         /* Reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(26px);
+            transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
         }
         .reveal.in {
             opacity: 1;
@@ -984,53 +420,740 @@
             }
         }
 
-        /* Mobile menu */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: #0A3A4A;
-            z-index: 99;
-            flex-direction: column;
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 72px;
             align-items: center;
-            justify-content: center;
-            gap: 28px;
-            transform: translateY(-100%);
-            transition: transform 0.4s ease;
-        }
-        .mobile-menu.open {
-            transform: translateY(0);
-            display: flex;
-        }
-        .mobile-menu a {
-            color: #fff;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.6rem;
-        }
-        .mobile-close {
-            position: absolute;
-            top: 24px;
-            right: 28px;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
         }
         @media (max-width: 900px) {
-            .mobile-menu {
-                display: flex;
+            .about-grid {
+                grid-template-columns: 1fr;
             }
+        }
+        .about-art {
+            position: relative;
+            aspect-ratio: 4/5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .about-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Rooms */
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: rgba(0, 0, 0, 0.05);
+        }
+        @media (max-width: 800px) {
+            .room-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .room-card {
+            background: var(--white);
+            padding: 44px 40px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s ease;
+        }
+        .room-card:hover {
+            background: var(--sand);
+        }
+        .room-art {
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 2px;
+            margin-bottom: 26px;
+            overflow: hidden;
+        }
+        .room-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .room-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+            font-family: var(--font-serif);
+        }
+        .room-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin: 18px 0 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .room-price {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--sunset-deep);
+        }
+        .room-price span {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            display: block;
+        }
+        .room-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+        .tag {
+            font-size: 0.66rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            color: var(--muted);
+        }
+
+        /* Amenities */
+        .amenity-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        @media (max-width: 900px) {
+            .amenity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .amenity {
+            background: var(--surf-dark);
+            padding: 38px 28px;
+            transition: background 0.3s ease;
+        }
+        .amenity:hover {
+            background: var(--surf);
+        }
+        .amenity svg {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 18px;
+            stroke: var(--gold);
+        }
+        .amenity h4 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            font-family: var(--font-serif);
+            font-weight: 400;
+        }
+        .amenity p {
+            font-size: 0.88rem;
+        }
+
+        /* Dining */
+        .dine-row {
+            display: flex;
+            gap: 28px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            scroll-snap-type: x mandatory;
+        }
+        .dine-row::-webkit-scrollbar {
+            height: 6px;
+        }
+        .dine-row::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+        .dine-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background: var(--white);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .dine-art {
+            aspect-ratio: 4/3;
+            width: 100%;
+            overflow: hidden;
+        }
+        .dine-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .dine-body {
+            padding: 24px;
+        }
+        .dine-body .kind {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--sunset-deep);
+            font-weight: 700;
+        }
+        .dine-body h3 {
+            font-size: 1.3rem;
+            margin: 8px 0 8px;
+            font-family: var(--font-serif);
+        }
+
+        /* Gallery */
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 130px;
+            gap: 10px;
+        }
+        @media (max-width: 800px) {
+            .gal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .gal-item {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .gal-item.tall {
+            grid-row: span 2;
+        }
+        .gal-item.wide {
+            grid-column: span 2;
+        }
+        .gal-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gal-item .cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 12px 14px;
+            background: linear-gradient(0deg, rgba(10, 58, 74, 0.85), transparent);
+            color: var(--white);
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s ease;
+        }
+        .gal-item:hover .cap {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gal-item:hover {
+            transform: scale(1.01);
+        }
+
+        /* Reviews */
+        .rev-wrap {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 64px;
+        }
+        @media (max-width: 900px) {
+            .rev-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+        .rating-big {
+            font-family: var(--font-serif);
+            font-size: 5rem;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--surf-dark);
+        }
+        .stars {
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 10px 0;
+        }
+        .rev-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        @media (max-width: 600px) {
+            .rev-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .rev-card {
+            background: var(--white);
+            padding: 26px;
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .rev-card .stars {
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        .rev-card p {
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+        .rev-card .who {
+            margin-top: 16px;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        /* Booking */
+        .booking-wrap {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 0;
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        @media (max-width: 900px) {
+            .booking-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+        .booking-side {
+            background: var(--surf);
+            color: var(--white);
+            padding: 52px 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .booking-side .rate {
+            margin-top: auto;
+            padding-top: 36px;
+        }
+        .booking-side .rate b {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--gold-soft);
+        }
+        .booking-steps {
+            list-style: none;
+            margin-top: 34px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .booking-steps li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.85rem;
+            color: var(--muted-light);
+            transition: color 0.3s ease;
+        }
+        .booking-steps li .num {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 1px solid var(--muted-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-family: var(--font-serif);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .booking-steps li.active {
+            color: var(--white);
+        }
+        .booking-steps li.active .num {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--surf-dark);
+        }
+        .booking-steps li.done .num {
+            background: transparent;
+            border-color: var(--gold-soft);
+            color: var(--gold-soft);
+        }
+
+        .booking-main {
+            padding: 52px 48px;
+            position: relative;
+        }
+        @media (max-width: 600px) {
+            .booking-main {
+                padding: 36px 24px;
+            }
+            .booking-side {
+                padding: 36px 24px;
+            }
+        }
+        .b-step {
+            display: none;
+        }
+        .b-step.active {
+            display: block;
+            animation: fadein 0.5s var(--ease);
+        }
+        @keyframes fadein {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .b-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+            font-family: var(--font-serif);
+        }
+        .b-step .hint {
+            color: var(--muted);
+            font-size: 0.88rem;
+            margin-bottom: 28px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 520px) {
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+        .field label {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .field input,
+        .field select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: var(--foam);
+            border-radius: 2px;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            color: var(--ink);
+            transition: border-color 0.25s ease;
+        }
+        .field input:focus,
+        .field select:focus {
+            outline: none;
+            border-color: var(--sunset-deep);
+        }
+        .field-error {
+            color: var(--sunset-deep);
+            font-size: 0.76rem;
+            margin-top: 6px;
+            display: none;
+        }
+        .field.invalid input {
+            border-color: var(--sunset-deep);
+        }
+        .field.invalid .field-error {
+            display: block;
+        }
+
+        .room-pick {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .room-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: var(--foam);
+        }
+        .room-option:hover {
+            border-color: var(--sunset-deep);
+        }
+        .room-option.selected {
+            border-color: var(--sunset-deep);
+            background: rgba(232, 120, 90, 0.06);
+        }
+        .room-option .ro-name {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+        }
+        .room-option .ro-meta {
+            font-size: 0.76rem;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+        .room-option .ro-price {
+            font-family: var(--font-serif);
+            color: var(--sunset-deep);
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        .stepper {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .stepper button {
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: var(--white);
+            border-radius: 50%;
+            font-size: 1rem;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .stepper button:hover {
+            border-color: var(--sunset-deep);
+            color: var(--sunset-deep);
+        }
+        .stepper span {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .b-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 32px;
+            gap: 16px;
+        }
+        .b-back {
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .b-back:hover {
+            color: var(--sunset-deep);
+        }
+
+        .summary-box {
+            background: var(--sand);
+            padding: 22px 24px;
+            border-radius: 3px;
+            margin-top: 8px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            padding: 7px 0;
+            color: var(--muted);
+        }
+        .summary-row.total {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: 8px;
+            padding-top: 14px;
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 1.05rem;
+        }
+
+        .postcard {
+            position: relative;
+            border: 1px dashed var(--gold);
+            border-radius: 4px;
+            padding: 36px 32px;
+            background: var(--foam);
+        }
+        .postcard .stamp {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            width: 64px;
+            height: 78px;
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(6deg);
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 0.7rem;
+            text-align: center;
+            line-height: 1.2;
+            padding: 6px;
+        }
+        .postcard .ref {
+            font-family: var(--font-serif);
+            font-size: 1.9rem;
+            margin: 14px 0 4px;
+        }
+        .postcard .ref-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* Location */
+        .loc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .loc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .loc-list li {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .loc-list b {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--white);
+        }
+        .loc-list span {
+            font-size: 0.85rem;
+            color: var(--muted-light);
+        }
+        .loc-map {
+            aspect-ratio: 1/1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .loc-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surf-dark);
+            color: var(--muted-light);
+            padding: 72px 0 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        @media (max-width: 800px) {
+            .foot-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .foot-grid h4 {
+            color: var(--gold-soft);
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        .foot-grid li {
+            padding: 6px 0;
+            font-size: 0.88rem;
+        }
+        .foot-grid a:hover {
+            color: var(--white);
+        }
+        .foot-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 28px;
+            font-size: 0.78rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%) translateY(120%);
+            background: var(--surf-dark);
+            color: var(--white);
+            padding: 16px 26px;
+            border-radius: 3px;
+            z-index: 300;
+            font-size: 0.85rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.4s var(--ease);
+            border-left: 3px solid var(--gold);
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header id="header">
+    <header id="siteHeader">
         <div class="container">
-            <a href="#" class="logo">On Board Panglao<span>Beach Hostel & Resort</span></a>
-            <nav>
+            <a href="#top" class="brand">
+                <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="19" stroke="#C9A24B" stroke-width="1"/>
+                    <path d="M20 30C20 30 11 24.5 11 17.5C11 13.9 13.9 11 17.4 11C18.9 11 20 12 20 12C20 12 21.1 11 22.6 11C26.1 11 29 13.9 29 17.5C29 24.5 20 30 20 30Z" fill="#C9A24B" opacity=".85"/>
+                </svg>
+                <span class="brand-name">On Board Panglao<span>Beach Hostel & Resort</span></span>
+            </a>
+            <nav class="links">
                 <a href="#about">About</a>
                 <a href="#rooms">Rooms</a>
                 <a href="#amenities">Amenities</a>
@@ -1039,16 +1162,15 @@
                 <a href="#reviews">Reviews</a>
                 <a href="#location">Location</a>
             </nav>
-            <div class="nav-actions">
-                <a href="#booking" class="btn btn-gold" style="padding: 10px 22px; font-size:0.7rem;">Book Now</a>
-                <button class="burger" id="burgerBtn">☰</button>
+            <div class="nav-cta">
+                <a href="#booking" class="btn btn-gold" style="padding: 11px 22px;">Book Now</a>
+                <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-close" id="mobileClose">✕</button>
+        <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
         <a href="#about">About</a>
         <a href="#rooms">Rooms</a>
         <a href="#amenities">Amenities</a>
@@ -1059,116 +1181,115 @@
         <a href="#booking" class="btn btn-gold">Book Now</a>
     </div>
 
-    <!-- Hero -->
     <section class="hero" id="top">
-        <img class="hero-bg" src="https://images.unsplash.com/photo-1571896349842-33c89424ffe2?w=1440&q=80" alt="On Board Panglao Beach">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424ffe2?w=1440&q=80" alt="On Board Panglao Beach Hostel and Resort">
+        </div>
         <div class="hero-content">
             <div class="container">
-                <div style="display:flex; align-items:center; gap:14px; color:#E4CD9A;">
-                    <span style="width:44px; height:1px; background:#E4CD9A;"></span>
-                    <span style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;">Libaong, Panglao · Bohol</span>
-                </div>
-                <h1>Beachfront stays <em>with soul</em></h1>
-                <p>A laid-back beach hostel and resort on Panglao Island — private beach access, a social bar, and the kind of stay that feels like coming home.</p>
-                <div class="hero-actions">
+                <div class="hero-kicker"><span class="rule"></span><span class="eyebrow light">Libaong, Panglao · Bohol</span></div>
+                <h1 class="reveal in">Beachfront stays <em>with soul</em></h1>
+                <p class="hero-sub reveal in">A laid-back beach hostel and resort on Panglao Island — private beach access, a social bar, and the kind of stay that feels like coming home.</p>
+                <div class="hero-actions reveal in">
                     <a href="#booking" class="btn btn-primary">Check Availability</a>
                     <a href="#rooms" class="btn btn-outline">View Rooms</a>
                 </div>
-                <div class="hero-stats">
-                    <div><b>3.8 ★</b><span>195 Guest Ratings</span></div>
-                    <div><b>Beachfront</b><span>Private Shoreline</span></div>
-                    <div><b>Hostel Vibe</b><span>Social Atmosphere</span></div>
+                <div class="hero-stats reveal in">
+                    <div class="hero-stat"><b>3.8 ★</b><span>195 Guest Ratings</span></div>
+                    <div class="hero-stat"><b>Beachfront</b><span>Private Shoreline</span></div>
+                    <div class="hero-stat"><b>Hostel Vibe</b><span>Social Atmosphere</span></div>
+                    <div class="hero-stat"><b>Bar On-Site</b><span>Cold Drinks & Music</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section class="section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image reveal">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=750&fit=crop" alt="On Board Panglao">
+        <div class="container about-grid">
+            <div class="reveal">
+                <div class="about-art">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=750&fit=crop&crop=center" alt="On Board Panglao Beach Hostel and Resort">
                 </div>
-                <div class="about-text reveal">
-                    <span class="eyebrow" style="font-size:0.7rem; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:#C65B3E; display:block; margin-bottom:8px;">The Hostel & Resort</span>
-                    <h2 style="font-family:'DM Serif Display',serif; font-size:clamp(2rem,4vw,3.2rem); line-height:1.1;">A place to <em style="color:#C65B3E; font-style:italic;">arrive</em> and belong</h2>
-                    <p style="margin-top:16px; color:#6B7A78;">On Board Panglao Beach Hostel and Resort sits along the shoreline of Libaong, Panglao — a place where the line between hostel and resort blurs into something better. Private beach access, a buzzing bar, and rooms that range from budget-friendly to comfortable private stays.</p>
-                    <p style="color:#6B7A78;">Whether you're a solo traveler looking for new friends or a couple seeking a quiet beachfront escape, On Board Panglao offers the best of both worlds — social energy when you want it, and peace when you need it.</p>
-                    <div class="about-stats">
-                        <div><strong>3.8★</strong><span>Guest Rating</span></div>
-                        <div><strong>195+</strong><span>Reviews</span></div>
-                        <div><strong>Beachfront</strong><span>Private Shoreline</span></div>
-                    </div>
+            </div>
+            <div class="reveal">
+                <span class="eyebrow">The Hostel & Resort</span>
+                <h2 style="margin-top: 14px;">A place to <em>arrive</em> and belong</h2>
+                <p style="margin-top: 22px;">On Board Panglao Beach Hostel and Resort sits along the shoreline of Libaong, Panglao — a place where the line between hostel and resort blurs into something better. Private beach access, a buzzing bar, and rooms that range from budget-friendly to comfortable private stays.</p>
+                <p style="margin-top: 16px;">Whether you're a solo traveler looking for new friends or a couple seeking a quiet beachfront escape, On Board Panglao offers the best of both worlds — social energy when you want it, and peace when you need it.</p>
+                <div style="margin-top: 32px; display: flex; gap: 40px; flex-wrap: wrap;">
+                    <div><div style="font-family: var(--font-serif); font-size: 1.7rem;">3.8★</div><div style="font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Guest Rating</div></div>
+                    <div><div style="font-family: var(--font-serif); font-size: 1.7rem;">195+</div><div style="font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Reviews</div></div>
+                    <div><div style="font-family: var(--font-serif); font-size: 1.7rem;">Beachfront</div><div style="font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Private Shoreline</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rooms -->
-    <section class="section" id="rooms" style="padding-top:0;">
+    <!-- ROOMS -->
+    <section class="section" id="rooms" style="padding-top: 0;">
         <div class="container">
             <div class="section-head reveal">
                 <span class="eyebrow">Rooms &amp; Dorms</span>
-                <h2>Spaces for <em>every kind</em> of traveler</h2>
+                <h2 style="margin-top: 14px;">Spaces for <em>every kind</em> of traveler</h2>
             </div>
         </div>
         <div class="room-grid" id="roomGrid"></div>
     </section>
 
-    <!-- Amenities -->
-    <section class="dark-bg section" id="amenities" style="padding-top:64px;">
+    <!-- AMENITIES -->
+    <section class="section dark-bg" id="amenities" style="padding-top: 64px;">
         <div class="container">
-            <div class="section-head reveal">
-                <span class="eyebrow" style="color:#E4CD9A;">On the Grounds</span>
-                <h2 style="color:#fff;">Everything <em style="color:#C9A24B;">at your fingertips</em></h2>
+            <div class="section-head reveal on-dark">
+                <span class="eyebrow light">On the Grounds</span>
+                <h2 style="margin-top: 14px;">Everything <em>at your fingertips</em></h2>
             </div>
         </div>
         <div class="amenity-grid" id="amenityGrid"></div>
     </section>
 
-    <!-- Dining -->
+    <!-- DINING -->
     <section class="section" id="dining">
         <div class="container">
             <div class="section-head reveal">
-                <span class="eyebrow">Bar &amp; Dining</span>
-                <h2>Flavors of <em>the island</em></h2>
+                <span class="eyebrow">Dining &amp; Bar</span>
+                <h2 style="margin-top: 14px;">Flavors of <em>the island</em></h2>
             </div>
             <div class="dine-row reveal" id="dineRow"></div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="section" id="gallery" style="padding-top:0;">
+    <!-- GALLERY -->
+    <section class="section" style="padding-top: 0;" id="gallery">
         <div class="container">
             <div class="section-head reveal">
                 <span class="eyebrow">Gallery</span>
-                <h2>A glimpse <em>of paradise</em></h2>
+                <h2 style="margin-top: 14px;">A glimpse <em>of paradise</em></h2>
             </div>
             <div class="gal-grid reveal" id="galGrid"></div>
         </div>
     </section>
 
-    <!-- Reviews -->
-    <section class="section" id="reviews" style="background:#F5F0E8;">
+    <!-- REVIEWS -->
+    <section class="section" id="reviews" style="background: var(--sand);">
         <div class="container">
             <div class="section-head reveal">
                 <span class="eyebrow">Guest Reviews</span>
-                <h2>What guests <em>are saying</em></h2>
+                <h2 style="margin-top: 14px;">What guests <em>are saying</em></h2>
             </div>
             <div class="rev-wrap">
                 <div class="reveal">
                     <div class="rating-big">3.8</div>
                     <div class="stars">★★★★☆</div>
-                    <p style="color:#6B7A78;">Based on 195 guest reviews across multiple platforms.</p>
-                    <div style="margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.8rem; color:#6B7A78;">
-                        <div><span style="font-weight:700; color:#1A1A1A;">Location</span> 8.5/10</div>
-                        <div><span style="font-weight:700; color:#1A1A1A;">Atmosphere</span> 8.2/10</div>
-                        <div><span style="font-weight:700; color:#1A1A1A;">Value</span> 8.0/10</div>
-                        <div><span style="font-weight:700; color:#1A1A1A;">Staff</span> 7.8/10</div>
+                    <p style="margin-bottom: 20px;">Based on 195 guest reviews across multiple platforms.</p>
+                    <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.8rem; color: var(--muted);">
+                        <div><span style="font-weight: 700; color: var(--ink);">Location</span> 8.5/10</div>
+                        <div><span style="font-weight: 700; color: var(--ink);">Atmosphere</span> 8.2/10</div>
+                        <div><span style="font-weight: 700; color: var(--ink);">Value</span> 8.0/10</div>
+                        <div><span style="font-weight: 700; color: var(--ink);">Staff</span> 7.8/10</div>
                     </div>
-                    <div style="margin-top:12px; font-size:0.8rem; color:#6B7A78;">
-                        <span style="font-weight:700; color:#1A1A1A;">Guest Favorite:</span> "Love the adventure"
+                    <div style="margin-top: 16px; font-size: 0.8rem; color: var(--muted);">
+                        <span style="font-weight: 700; color: var(--ink);">Guest Favorite:</span> "Love the adventure, going out of the hostel."
                     </div>
                 </div>
                 <div class="rev-cards reveal" id="revCards"></div>
@@ -1176,19 +1297,19 @@
         </div>
     </section>
 
-    <!-- Booking -->
-    <section class="section" id="booking" style="background:#FAF8F5;">
+    <!-- BOOKING -->
+    <section class="section" id="booking" style="background: var(--foam);">
         <div class="container">
-            <div class="section-head center" style="max-width:640px; margin:0 auto 48px; text-align:center;">
+            <div class="section-head center reveal">
                 <span class="eyebrow">Reserve Your Stay</span>
-                <h2>Plan your <em>escape</em></h2>
-                <p>Four simple steps. No account required — a confirmation postcard is generated the moment you're done.</p>
+                <h2 style="margin-top: 14px;">Plan your <em>escape</em></h2>
+                <p style="margin-top: 14px;">Four simple steps. No account required — a confirmation postcard is generated the moment you're done.</p>
             </div>
 
             <div class="booking-wrap reveal">
                 <div class="booking-side">
                     <div>
-                        <span class="eyebrow" style="color:#E4CD9A;">Booking Summary</span>
+                        <span class="eyebrow light">Booking Summary</span>
                         <ul class="booking-steps" id="stepList">
                             <li class="active" data-step="1"><span class="num">01</span> Dates &amp; Guests</li>
                             <li data-step="2"><span class="num">02</span> Choose Room</li>
@@ -1196,16 +1317,16 @@
                             <li data-step="4"><span class="num">04</span> Confirmation</li>
                         </ul>
                     </div>
-                    <div class="rate">
-                        <span class="eyebrow" style="color:#E4CD9A;">Estimated Total</span>
+                    <div class="rate" id="sideSummary">
+                        <span class="eyebrow light">Estimated Total</span>
                         <b id="sideTotal">₱0</b>
-                        <p id="sideNights" style="font-size:0.82rem; color:#9FBDB6;">Select your dates to begin</p>
+                        <p id="sideNights" style="font-size: 0.82rem;">Select your dates to begin</p>
                     </div>
                 </div>
 
                 <div class="booking-main">
 
-                    <!-- Step 1 -->
+                    <!-- STEP 1 -->
                     <div class="b-step active" data-step="1">
                         <h3>When are you arriving?</h3>
                         <p class="hint">Pick your check-in and check-out dates, plus your party size.</p>
@@ -1231,12 +1352,12 @@
                                 <div class="stepper"><button type="button" data-target="children" data-dir="-1">&minus;</button><span id="childrenVal">0</span><button type="button" data-target="children" data-dir="1">+</button></div>
                             </div>
                         </div>
-                        <div class="b-actions" style="justify-content:flex-end;">
+                        <div class="b-actions" style="justify-content: flex-end;">
                             <button class="btn btn-primary" id="toStep2">Continue to Rooms</button>
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
+                    <!-- STEP 2 -->
                     <div class="b-step" data-step="2">
                         <h3>Choose your room</h3>
                         <p class="hint">Rates shown are per night, before taxes and service charge.</p>
@@ -1247,7 +1368,7 @@
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
+                    <!-- STEP 3 -->
                     <div class="b-step" data-step="3">
                         <h3>Your details</h3>
                         <p class="hint">We'll send your confirmation postcard to this email.</p>
@@ -1274,20 +1395,22 @@
                                 <input type="text" id="grequest" placeholder="High floor, honeymoon, etc.">
                             </div>
                         </div>
+
                         <div class="summary-box" id="summaryBox"></div>
+
                         <div class="b-actions">
                             <button class="b-back" data-back="2">&larr; Back</button>
                             <button class="btn btn-primary" id="toStep4">Confirm Reservation</button>
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
+                    <!-- STEP 4 -->
                     <div class="b-step" data-step="4">
                         <h3>You're booked.</h3>
                         <p class="hint">A summary of your stay — save this reference for check-in.</p>
                         <div class="postcard" id="postcard"></div>
-                        <div class="b-actions" style="justify-content:flex-start; margin-top:24px;">
-                            <button class="btn btn-outline-dark" id="newBooking" style="border:1px solid #1A1A1A; background:transparent; color:#1A1A1A; padding:12px 24px;">Make Another Booking</button>
+                        <div class="b-actions" style="justify-content: flex-start; margin-top: 28px;">
+                            <button class="btn btn-outline-dark" id="newBooking">Make Another Booking</button>
                         </div>
                     </div>
 
@@ -1296,42 +1419,61 @@
         </div>
     </section>
 
-    <!-- Location -->
-    <section class="dark-bg section" id="location">
+    <!-- LOCATION -->
+    <section class="section dark-bg" id="location">
         <div class="container loc-grid">
             <div class="reveal">
-                <span class="eyebrow" style="color:#E4CD9A;">Find Us</span>
-                <h2 style="color:#fff; margin-top:12px;">Panglao, <em style="color:#C9A24B;">Bohol</em></h2>
-                <ul class="loc-list" style="margin-top:24px;">
-                    <li><div><b>Address</b><span>Sitio Regla, Libaong, Panglao, Bohol</span></div></li>
-                    <li><div><b>Phone</b><span>0995 940 1799</span></div></li>
-                    <li><div><b>Check-in / Check-out</b><span>2:00 PM / 11:00 AM</span></div></li>
-                    <li><div><b>Getting there</b><span>25 minutes from Panglao Airport</span></div></li>
+                <span class="eyebrow light">Find Us</span>
+                <h2 style="margin-top: 14px;">Panglao, <em>Bohol</em></h2>
+                <ul class="loc-list" style="margin-top: 24px;">
+                    <li>
+                        <div>
+                            <b>Address</b>
+                            <span>Sitio Regla, Libaong, Panglao, Bohol</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <b>Phone</b>
+                            <span>0995 940 1799</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <b>Check-in / Check-out</b>
+                            <span>2:00 PM / 11:00 AM</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <b>Getting there</b>
+                            <span>25 minutes from Panglao / Bohol-Tagbilaran Airport</span>
+                        </div>
+                    </li>
                 </ul>
-                <a href="https://www.google.com/maps/search/?api=1&query=On+Board+Panglao+Beach+Hostel+and+Resort" target="_blank" class="btn btn-outline" style="margin-top:24px;">Open in Google Maps</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=On+Board+Panglao+Beach+Hostel+and+Resort" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top: 28px;">Open in Google Maps</a>
             </div>
             <div class="reveal">
                 <div class="loc-map">
-                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&h=500&fit=crop" alt="Map">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&h=500&fit=crop&crop=center" alt="Map location of On Board Panglao Beach Hostel and Resort">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="foot-grid">
                 <div>
-                    <h4 style="color:#fff; font-family:'DM Serif Display',serif; font-size:1.1rem; text-transform:none; letter-spacing:0;">On Board Panglao</h4>
-                    <p style="font-size:0.85rem; margin-top:10px;">Beach Hostel and Resort · Libaong, Panglao, Bohol</p>
+                    <h4 style="color: var(--white); font-family: var(--font-serif); font-size: 1.1rem; letter-spacing: 0; text-transform: none; font-weight: 400;">On Board Panglao</h4>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">Beach Hostel and Resort · Libaong, Panglao, Bohol</p>
                 </div>
                 <div>
                     <h4>Explore</h4>
                     <ul>
                         <li><a href="#rooms">Rooms &amp; Dorms</a></li>
                         <li><a href="#amenities">Amenities</a></li>
-                        <li><a href="#dining">Bar &amp; Dining</a></li>
+                        <li><a href="#dining">Dining &amp; Bar</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                     </ul>
                 </div>
@@ -1345,10 +1487,10 @@
                 </div>
                 <div>
                     <h4>Stay in Touch</h4>
-                    <p style="font-size:0.85rem; margin-bottom:14px;">Receive exclusive offers and updates.</p>
-                    <div style="display:flex; gap:0;">
-                        <input type="email" placeholder="Email address" style="flex:1; padding:11px 14px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:#fff; font-size:0.85rem;">
-                        <button class="btn btn-gold" style="padding:11px 18px;" onclick="showToast('Thanks — we\'ll be in touch.')">Join</button>
+                    <p style="font-size: 0.85rem; margin-bottom: 14px;">Receive exclusive offers and updates.</p>
+                    <div style="display: flex; gap: 0;">
+                        <input type="email" placeholder="Email address" style="flex: 1; padding: 11px 14px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: var(--white); font-size: 0.85rem;">
+                        <button class="btn btn-gold" style="padding: 11px 18px;" onclick="showToast('Thanks — we\'ll be in touch.')">Join</button>
                     </div>
                 </div>
             </div>
@@ -1359,13 +1501,10 @@
         </div>
     </footer>
 
-    <!-- Toast -->
     <div class="toast" id="toast"></div>
 
     <script>
-        // ============================================================
-        // DATA
-        // ============================================================
+        /* ================= DATA ================= */
         const ROOMS = [{
             id: 'dorm',
             name: 'Shared Dormitory',
@@ -1373,7 +1512,7 @@
             guests: 8,
             desc: 'Budget-friendly dorm with bunk beds, shared bathroom, and a social atmosphere perfect for solo travelers.',
             tags: ['8-bed dorm', 'Shared bath', 'Fan', 'Social vibe'],
-            img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&h=250&fit=crop'
+            img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&h=250&fit=crop&crop=center'
         }, {
             id: 'private-double',
             name: 'Private Double Room',
@@ -1381,7 +1520,7 @@
             guests: 2,
             desc: 'Comfortable private room with a double bed, air conditioning, and shared bathroom facilities.',
             tags: ['16 sqm', 'A/C', 'Double bed', 'Shared bath'],
-            img: 'https://images.unsplash.com/photo-1584132967330-7b9e1c654bcf?w=400&h=250&fit=crop'
+            img: 'https://images.unsplash.com/photo-1584132967330-7b9e1c654bcf?w=400&h=250&fit=crop&crop=center'
         }, {
             id: 'private-family',
             name: 'Family Room',
@@ -1389,7 +1528,7 @@
             guests: 4,
             desc: 'Spacious family room with two double beds, air conditioning, and private bathroom.',
             tags: ['24 sqm', 'A/C', '2 Double beds', 'Private bath'],
-            img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop'
+            img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop&crop=center'
         }, {
             id: 'beachfront-cottage',
             name: 'Beachfront Cottage',
@@ -1397,86 +1536,107 @@
             guests: 3,
             desc: 'Private cottage steps from the shore with a veranda, air conditioning, and stunning ocean views.',
             tags: ['32 sqm', 'Beachfront', 'A/C', 'Private veranda'],
-            img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=250&fit=crop'
+            img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=250&fit=crop&crop=center'
         }];
 
-        const AMENITIES = [
-            { name: 'Private Beach Access', desc: 'Direct access to a beautiful shoreline — steps from your room.',
-                icon: 'M3 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M12 4v6' },
-            { name: 'Social Bar', desc: 'A lively bar with cold drinks, music, and a great crowd.',
-                icon: 'M12 3c2 3-2 4-2 7a4 4 0 0 0 8 0c0-2-1-3-1-3 M6 21c0-5 3-7 6-7s6 2 6 7' },
-            { name: 'Hostel Vibe', desc: 'A warm, social atmosphere where solo travelers become friends.',
-                icon: 'M10 4a2 2 0 1 0 4 0 2 2 0 1 0-4 0 M8 20l4-7 2 3 4 1 M9 12l3-4 3 1' },
-            { name: 'Free Wi-Fi', desc: 'Stay connected with complimentary Wi-Fi throughout the property.',
-                icon: 'M6 4h6a4 4 0 0 1 0 8H8v8 M8 8h4' },
-            { name: 'Outdoor Dining', desc: 'Enjoy meals with ocean views in our beachfront dining area.',
-                icon: 'M3 16l5-1 4-7 2 1-3 6 6-1 3-4 2 1-2 6-9 2z' },
-            { name: 'Free Parking', desc: 'Secure, complimentary parking for all guests.',
-                icon: 'M4 19h16 M6 19V9l6-5 6 5v10 M9 19v-6h6v6' },
-            { name: 'Air-Conditioned Rooms', desc: 'Individual climate control in private rooms and cottages.',
-                icon: 'M12 2v20 M4 6l16 12 M20 6L4 18' },
-            { name: 'Daily Housekeeping', desc: 'Full housekeeping included every day of your stay.',
-                icon: 'M3 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M12 4v6' }
-        ];
+        const AMENITIES = [{
+            name: 'Private Beach Access',
+            desc: 'Direct access to a beautiful shoreline — steps from your room.',
+            icon: 'M3 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M12 4v6'
+        }, {
+            name: 'Social Bar',
+            desc: 'A lively bar with cold drinks, music, and a great crowd of fellow travelers.',
+            icon: 'M12 3c2 3-2 4-2 7a4 4 0 0 0 8 0c0-2-1-3-1-3 M6 21c0-5 3-7 6-7s6 2 6 7'
+        }, {
+            name: 'Hostel Vibe',
+            desc: 'A warm, social atmosphere where solo travelers become friends.',
+            icon: 'M10 4a2 2 0 1 0 4 0 2 2 0 1 0-4 0 M8 20l4-7 2 3 4 1 M9 12l3-4 3 1'
+        }, {
+            name: 'Free Wi-Fi',
+            desc: 'Stay connected with complimentary Wi-Fi throughout the property.',
+            icon: 'M6 4h6a4 4 0 0 1 0 8H8v8 M8 8h4'
+        }, {
+            name: 'Outdoor Dining',
+            desc: 'Enjoy meals with ocean views in our beachfront dining area.',
+            icon: 'M3 16l5-1 4-7 2 1-3 6 6-1 3-4 2 1-2 6-9 2z'
+        }, {
+            name: 'Free Parking',
+            desc: 'Secure, complimentary parking for all guests.',
+            icon: 'M4 19h16 M6 19V9l6-5 6 5v10 M9 19v-6h6v6'
+        }, {
+            name: 'Air-Conditioned Rooms',
+            desc: 'Individual climate control in private rooms and cottages.',
+            icon: 'M12 2v20 M4 6l16 12 M20 6L4 18'
+        }, {
+            name: 'Daily Housekeeping',
+            desc: 'Full housekeeping included every day of your stay.',
+            icon: 'M3 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0 M12 4v6'
+        }];
 
-        const DINES = [
-            { kind: 'Bar & Grill', name: 'Beachfront Bar', rating: '4.0 · 8 reviews',
-                desc: 'Cold beers, cocktails, and light bites served with ocean views.',
-                img: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=300&h=225&fit=crop' },
-            { kind: 'Filipino Cuisine', name: 'On Board Kitchen', rating: '3.5 · 6 reviews',
-                desc: 'Local Filipino favorites made fresh, from adobo to seafood specialties.',
-                img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=225&fit=crop' },
-            { kind: 'All-Day Dining', name: 'Sunset Grill', rating: '4.0 · 5 reviews',
-                desc: 'Grilled seafood and meats served as the sun dips below the horizon.',
-                img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=225&fit=crop' }
-        ];
+        const DINES = [{
+            kind: 'Bar & Grill',
+            name: 'Beachfront Bar',
+            rating: '4.0 · 8 reviews',
+            desc: 'Cold beers, cocktails, and light bites served with ocean views and good company.',
+            img: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=300&h=225&fit=crop&crop=center'
+        }, {
+            kind: 'Filipino Cuisine',
+            name: 'On Board Kitchen',
+            rating: '3.5 · 6 reviews',
+            desc: 'Local Filipino favorites made fresh, from adobo to seafood specialties.',
+            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=225&fit=crop&crop=center'
+        }, {
+            kind: 'All-Day Dining',
+            name: 'Sunset Grill',
+            rating: '4.0 · 5 reviews',
+            desc: 'Grilled seafood and meats served as the sun dips below the horizon.',
+            img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=225&fit=crop&crop=center'
+        }];
 
         const GALLERY = [
             { cap: 'Beachfront at Dusk', cls: 'tall',
-            img: 'https://images.unsplash.com/photo-1530023367847-a683933f4172?w=300&h=300&fit=crop' },
+            img: 'https://images.unsplash.com/photo-1530023367847-a683933f4172?w=300&h=300&fit=crop&crop=center' },
             { cap: 'Beachfront View', cls: 'wide',
-            img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop' },
-            { cap: 'Private Room', cls: '',
-            img: 'https://images.unsplash.com/photo-1584132967330-7b9e1c654bcf?w=300&h=300&fit=crop' },
-            { cap: 'Beach Bar', cls: '',
-            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=300&fit=crop' },
+            img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop&crop=center' },
+            { cap: 'Private Double Room', cls: '',
+            img: 'https://images.unsplash.com/photo-1584132967330-7b9e1c654bcf?w=300&h=300&fit=crop&crop=center' },
+            { cap: 'Beachfront Bar', cls: '',
+            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=300&fit=crop&crop=center' },
             { cap: 'Resort Grounds', cls: 'wide',
-            img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=300&fit=crop' },
-            { cap: 'Beach Cottage', cls: '',
-            img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=300&h=300&fit=crop' }
+            img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=300&fit=crop&crop=center' },
+            { cap: 'Beachfront Cottage', cls: '',
+            img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=300&h=300&fit=crop&crop=center' }
         ];
 
         const REVIEWS = [
             { stars: 4, text: 'Love the adventure, going out of the hostel. Great atmosphere and a fantastic bar right by the beach.',
-                who: 'Recent Guest · 8 months ago' },
-            { stars: 3, text: 'The bar was great and it was right by the ocean. Basic but clean rooms — good value.',
-                who: 'Trip.com Member · 11 months ago' },
-            { stars: 4, text: 'Nice beachfront location with a social vibe. Perfect for solo travelers.',
-                who: 'Traveler · Backpacker' },
+            who: 'Recent Guest · 8 months ago' },
+            { stars: 3, text: 'The bar was great and it was right by the ocean. Basic but clean rooms — good value for budget travelers.',
+            who: 'Trip.com Member · 11 months ago' },
+            { stars: 4, text: 'Nice beachfront location with a social vibe. Perfect for solo travelers looking to meet new people.',
+            who: 'Traveler · Backpacker' },
             { stars: 3, text: 'Affordable stay right on the beach. The staff were friendly and the atmosphere was lively.',
-                who: 'Recent Guest · Budget Traveler' }
+            who: 'Recent Guest · Budget Traveler' }
         ];
 
         const peso = n => '₱' + Math.round(n).toLocaleString('en-PH');
 
-        // ============================================================
-        // RENDER FUNCTIONS
-        // ============================================================
+        /* ================= RENDER FUNCTIONS ================= */
         function renderRooms() {
             const grid = document.getElementById('roomGrid');
-            ROOMS.forEach((r) => {
+            ROOMS.forEach((r, i) => {
                 const el = document.createElement('div');
                 el.className = 'room-card reveal';
                 el.innerHTML = `
-                        <div class="room-art"><img src="${r.img}" alt="${r.name}" loading="lazy"></div>
-                        <h3>${r.name}</h3>
-                        <p>${r.desc}</p>
-                        <div class="room-meta">
-                            <div class="room-price">${peso(r.price)}<span>per night</span></div>
-                            <span style="font-size:0.78rem; color:#6B7A78;">Sleeps ${r.guests}</span>
-                        </div>
-                        <div class="room-tags">${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-                    `;
+                            <div class="room-art"><img src="${r.img}" alt="${r.name}"></div>
+                            <h3>${r.name}</h3>
+                            <p>${r.desc}</p>
+                            <div class="room-meta">
+                                <div class="room-price">${peso(r.price)}<span>per night</span></div>
+                                <span style="font-size: 0.78rem; color: var(--muted);">Sleeps ${r.guests}</span>
+                            </div>
+                            <div class="room-tags">${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                        `;
                 grid.appendChild(el);
             });
         }
@@ -1487,10 +1647,10 @@
                 const el = document.createElement('div');
                 el.className = 'amenity reveal';
                 el.innerHTML = `
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="${a.icon}"/></svg>
-                        <h4>${a.name}</h4>
-                        <p>${a.desc}</p>
-                    `;
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="${a.icon}"/></svg>
+                            <h4>${a.name}</h4>
+                            <p>${a.desc}</p>
+                        `;
                 grid.appendChild(el);
             });
         }
@@ -1499,16 +1659,16 @@
             const row = document.getElementById('dineRow');
             DINES.forEach(d => {
                 const el = document.createElement('div');
-                el.className = 'dine-card reveal';
+                el.className = 'dine-card';
                 el.innerHTML = `
-                        <div class="dine-art"><img src="${d.img}" alt="${d.name}" loading="lazy"></div>
-                        <div class="dine-body">
-                            <span class="kind">${d.kind}</span>
-                            <h3>${d.name}</h3>
-                            <p style="font-size:0.8rem; color:#6B7A78; margin-bottom:6px;">★ ${d.rating}</p>
-                            <p>${d.desc}</p>
-                        </div>
-                    `;
+                            <div class="dine-art"><img src="${d.img}" alt="${d.name}"></div>
+                            <div class="dine-body">
+                                <span class="kind">${d.kind}</span>
+                                <h3>${d.name}</h3>
+                                <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 8px;">★ ${d.rating}</p>
+                                <p>${d.desc}</p>
+                            </div>
+                        `;
                 row.appendChild(el);
             });
         }
@@ -1517,8 +1677,8 @@
             const grid = document.getElementById('galGrid');
             GALLERY.forEach(g => {
                 const el = document.createElement('div');
-                el.className = `gal-item ${g.cls} reveal`;
-                el.innerHTML = `<img src="${g.img}" alt="${g.cap}" loading="lazy"><div class="cap">${g.cap}</div>`;
+                el.className = `gal-item ${g.cls}`;
+                el.innerHTML = `<img src="${g.img}" alt="${g.cap}"><div class="cap">${g.cap}</div>`;
                 grid.appendChild(el);
             });
         }
@@ -1527,20 +1687,18 @@
             const grid = document.getElementById('revCards');
             REVIEWS.forEach(r => {
                 const el = document.createElement('div');
-                el.className = 'rev-card reveal';
+                el.className = 'rev-card';
                 el.innerHTML = `
-                        <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
-                        <p>${r.text}</p>
-                        <div class="who">${r.who}</div>
-                    `;
+                            <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+                            <p>${r.text}</p>
+                            <div class="who">${r.who}</div>
+                        `;
                 grid.appendChild(el);
             });
         }
 
-        // ============================================================
-        // NAV
-        // ============================================================
-        const header = document.getElementById('header');
+        /* ================= NAV ================= */
+        const header = document.getElementById('siteHeader');
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.scrollY > 40);
         });
@@ -1550,21 +1708,16 @@
         const mobileClose = document.getElementById('mobileClose');
         burgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
         mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove(
-        'open')));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-        // ============================================================
-        // REVEAL
-        // ============================================================
+        /* ================= REVEAL ================= */
         const io = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in');
                     io.unobserve(e.target); } });
-        }, { threshold: 0.12 });
+        }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        // ============================================================
-        // TOAST
-        // ============================================================
+        /* ================= TOAST ================= */
         const toastEl = document.getElementById('toast');
         let toastTimer;
 
@@ -1575,9 +1728,7 @@
             toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3200);
         }
 
-        // ============================================================
-        // BOOKING LOGIC
-        // ============================================================
+        /* ================= BOOKING LOGIC ================= */
         const state = { checkin: null, checkout: null, adults: 2, children: 0, roomId: null };
 
         const checkinInput = document.getElementById('checkin');
@@ -1644,12 +1795,12 @@
                 const el = document.createElement('div');
                 el.className = 'room-option' + (state.roomId === r.id ? ' selected' : '');
                 el.innerHTML = `
-                            <div>
-                                <div class="ro-name">${r.name}</div>
-                                <div class="ro-meta">Sleeps ${r.guests} · ${n} night${n > 1 ? 's' : ''}</div>
-                            </div>
-                            <div class="ro-price">${peso(r.price)}<div style="font-size:0.68rem; color:#6B7A78; text-align:right;">/ night</div></div>
-                        `;
+                                <div>
+                                    <div class="ro-name">${r.name}</div>
+                                    <div class="ro-meta">Sleeps ${r.guests} · ${n} night${n > 1 ? 's' : ''}</div>
+                                </div>
+                                <div class="ro-price">${peso(r.price)}<div style="font-size: 0.68rem; color: var(--muted); text-align: right;">/ night</div></div>
+                            `;
                 el.addEventListener('click', () => {
                     state.roomId = r.id;
                     renderRoomPick();
@@ -1664,36 +1815,34 @@
             const { subtotal, service, vat, total } = computeTotals(n, state.roomId);
             const room = ROOMS.find(r => r.id === state.roomId);
             document.getElementById('summaryBox').innerHTML = `
-                        <div class="summary-row"><span>${room.name} × ${n} night${n > 1 ? 's' : ''}</span><span>${peso(subtotal)}</span></div>
-                        <div class="summary-row"><span>Service charge (10%)</span><span>${peso(service)}</span></div>
-                        <div class="summary-row"><span>VAT (12%)</span><span>${peso(vat)}</span></div>
-                        <div class="summary-row total"><span>Total due at property</span><span>${peso(total)}</span></div>
-                    `;
+                            <div class="summary-row"><span>${room.name} × ${n} night${n > 1 ? 's' : ''}</span><span>${peso(subtotal)}</span></div>
+                            <div class="summary-row"><span>Service charge (10%)</span><span>${peso(service)}</span></div>
+                            <div class="summary-row"><span>VAT (12%)</span><span>${peso(vat)}</span></div>
+                            <div class="summary-row total"><span>Total due at property</span><span>${peso(total)}</span></div>
+                        `;
         }
 
         function renderPostcard(guest) {
             const n = nightsBetween(state.checkin, state.checkout);
             const room = ROOMS.find(r => r.id === state.roomId);
             const { total } = computeTotals(n, state.roomId);
-            const inD = new Date(state.checkin).toLocaleDateString('en-US', { month: 'short', day: 'numeric',
-                year: 'numeric' });
-            const outD = new Date(state.checkout).toLocaleDateString('en-US', { month: 'short', day: 'numeric',
-                year: 'numeric' });
+            const inD = new Date(state.checkin).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const outD = new Date(state.checkout).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
             document.getElementById('postcard').innerHTML = `
-                        <div class="stamp">On Board<br>Panglao</div>
-                        <span class="eyebrow" style="font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:#C65B3E; display:block; margin-bottom:8px;">Booking Reference</span>
-                        <div class="ref">${refCode()}</div>
-                        <div class="ref-label">Present at check-in with a valid ID</div>
-                        <div style="margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:14px 20px;">
-                            <div><b style="font-family:'DM Serif Display',serif;">${room.name}</b><div style="font-size:0.8rem; color:#6B7A78;">${state.adults} adult${state.adults > 1 ? 's' : ''}${state.children ? ', ' + state.children + ' child' + (state.children > 1 ? 'ren' : '') : ''}</div></div>
-                            <div><b style="font-family:'DM Serif Display',serif;">${peso(total)}</b><div style="font-size:0.8rem; color:#6B7A78;">Total, taxes included</div></div>
-                            <div><b style="font-family:'DM Serif Display',serif;">${inD}</b><div style="font-size:0.8rem; color:#6B7A78;">Check-in from 2:00 PM</div></div>
-                            <div><b style="font-family:'DM Serif Display',serif;">${outD}</b><div style="font-size:0.8rem; color:#6B7A78;">Check-out by 11:00 AM</div></div>
-                            <div style="grid-column:1/-1;"><b style="font-family:'DM Serif Display',serif;">${guest.name}</b><div style="font-size:0.8rem; color:#6B7A78;">${guest.email} · ${guest.phone}</div></div>
-                            ${guest.request ? `<div style="grid-column:1/-1;"><b style="font-family:'DM Serif Display',serif; font-size:0.9rem;">Special request</b><div style="font-size:0.8rem; color:#6B7A78;">${guest.request}</div></div>` : ''}
-                        </div>
-                    `;
+                            <div class="stamp">On Board<br>Panglao</div>
+                            <span class="eyebrow">Booking Reference</span>
+                            <div class="ref">${refCode()}</div>
+                            <div class="ref-label">Present at check-in with a valid ID</div>
+                            <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px;">
+                                <div><b style="font-family: var(--font-serif);">${room.name}</b><div style="font-size: 0.8rem; color: var(--muted);">${state.adults} adult${state.adults > 1 ? 's' : ''}${state.children ? ', ' + state.children + ' child' + (state.children > 1 ? 'ren' : '') : ''}</div></div>
+                                <div><b style="font-family: var(--font-serif);">${peso(total)}</b><div style="font-size: 0.8rem; color: var(--muted);">Total, taxes included</div></div>
+                                <div><b style="font-family: var(--font-serif);">${inD}</b><div style="font-size: 0.8rem; color: var(--muted);">Check-in from 2:00 PM</div></div>
+                                <div><b style="font-family: var(--font-serif);">${outD}</b><div style="font-size: 0.8rem; color: var(--muted);">Check-out by 11:00 AM</div></div>
+                                <div style="grid-column: 1/-1;"><b style="font-family: var(--font-serif);">${guest.name}</b><div style="font-size: 0.8rem; color: var(--muted);">${guest.email} · ${guest.phone}</div></div>
+                                ${guest.request ? `<div style="grid-column: 1/-1;"><b style="font-family: var(--font-serif); font-size: 0.95rem;">Special request</b><div style="font-size: 0.8rem; color: var(--muted);">${guest.request}</div></div>` : ''}
+                            </div>
+                        `;
         }
 
         function refCode() {
@@ -1713,8 +1862,7 @@
 
             if (!checkinInput.value) { fCheckin.classList.add('invalid');
                 valid = false; }
-            if (!checkoutInput.value || nightsBetween(checkinInput.value, checkoutInput.value) <= 0) { fCheckout
-                    .classList.add('invalid');
+            if (!checkoutInput.value || nightsBetween(checkinInput.value, checkoutInput.value) <= 0) { fCheckout.classList.add('invalid');
                 valid = false; }
 
             if (!valid) return;
@@ -1781,9 +1929,7 @@
             setStep(1);
         });
 
-        // ============================================================
-        // INIT
-        // ============================================================
+        // Initialize
         renderRooms();
         renderAmenities();
         renderDining();
